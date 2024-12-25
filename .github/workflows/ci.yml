@@ -1,0 +1,41 @@
+name: Build and Test CGo App
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: 1.21
+
+    - name: Install build tools
+      run: sudo apt-get update && sudo apt-get install -y build-essential
+
+    - name: Build the application
+      run: |
+        go build -o hello .
+
+    - name: Run the application
+      run: |
+        ./hello
+
+    - name: Build Docker image
+      run: |
+        docker build -t cgo-hello-world .
+
+    - name: Test Docker image
+      run: |
+        docker run --rm cgo-hello-world

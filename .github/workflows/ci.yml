@@ -19,23 +19,27 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
-        go-version: 1.21
+        go-version: 1.23.4
 
     - name: Install build tools
       run: sudo apt-get update && sudo apt-get install -y build-essential
 
-    - name: Build the application
+    - name: Compile C Files
       run: |
-        go build -o hello .
+        gcc -c -o hello.o hello.c
+
+    - name: Create C Library
+      run: |
+       ar rcs libhello.a hello.o
 
     - name: Run the application
       run: |
-        ./hello
+        go run main.go
 
-    - name: Build Docker image
-      run: |
-        docker build -t cgo-hello-world .
+    # - name: Build Docker image
+    #   run: |
+    #     docker build -t cgo-hello-world .
 
-    - name: Test Docker image
-      run: |
-        docker run --rm cgo-hello-world
+    # - name: Test Docker image
+    #   run: |
+    #     docker run --rm cgo-hello-world

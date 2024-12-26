@@ -1,7 +1,7 @@
-// #include <stdio.h>
-// #include "printer.h"
+#include <stdio.h>
+#include "hello.h"
 
-// void sayHello() 
-// {
-//     printf("Hello from C!\n");
-// }
+void sayHello() 
+{
+    printf("Hello from C!\n");
+}

@@ -1,11 +1,9 @@
 package main
 
 /*
-#include <stdio.h>
-
-void sayHello() {
-    printf("Hello from C!\n");
-}
+#cgo CFLAGS: -I.
+#cgo LDFLAGS: -L. -lhello
+#include "hello.h"
 */
 import "C"
 

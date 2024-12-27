@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "hello.h"
+#include "pipeline.h"
 
-void sayHello() 
+void InitializeMediaPipeline() 
 {
     printf("Hello from C!\n");
 }

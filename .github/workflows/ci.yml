@@ -26,11 +26,11 @@ jobs:
 
     - name: Compile C Files
       run: |
-        gcc -c -o hello.o hello.c
+        gcc -c -o pipeline.o pipeline.c
 
     - name: Create C Library
       run: |
-       ar rcs libhello.a hello.o
+       ar rcs libpipeline.a pipeline.o
 
     - name: Run the application
       run: |

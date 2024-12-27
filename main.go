@@ -2,11 +2,11 @@ package main
 
 /*
 #cgo CFLAGS: -I.
-#cgo LDFLAGS: -L. -lhello
-#include "hello.h"
+#cgo LDFLAGS: -L. -lpipeline
+#include "pipeline.h"
 */
 import "C"
 
 func main() {
-	C.sayHello()
+	C.InitializeMediaPipeline()
 }

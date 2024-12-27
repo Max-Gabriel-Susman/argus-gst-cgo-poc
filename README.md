@@ -18,3 +18,8 @@ run application:
 ```
 go run main.go
 ```
+
+clear binaries:
+```
+make clean
+```

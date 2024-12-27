@@ -24,17 +24,13 @@ jobs:
     - name: Install build tools
       run: sudo apt-get update && sudo apt-get install -y build-essential
 
-    - name: Compile C Files
+    - name: Build Pipeline Library
       run: |
-        gcc -c -o pipeline.o pipeline.c
-
-    - name: Create C Library
-      run: |
-       ar rcs libpipeline.a pipeline.o
+        make build
 
     - name: Run the application
       run: |
-        go run main.go
+        make run
 
     # - name: Build Docker image
     #   run: |

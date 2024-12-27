@@ -4,14 +4,9 @@ This repository is a proof of concept for the use of gstreamer with cgo for the 
 
 ## Usage 
 
-compile C files:
+build pipeline library binaries:
 ```
-make cmpl-c
-```
-
-create C library:
-```
-make create-lib
+make build
 ```
 
 run application: 

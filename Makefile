@@ -1,10 +1,11 @@
 
 
-cmpl-c: 
-	gcc -c -o pipeline.o pipeline.c
-
-create-lib:
-	ar rcs libpipeline.a pipeline.o
+build:
+	gcc -c -o cmd/argus-stream-engine-service/pipeline.o pipeline.c
+	ar rcs cmd/argus-stream-engine-service/libpipeline.a cmd/argus-stream-engine-service/pipeline.o
 
 clean: 
-	rm pipeline.o libpipeline.a
+	rm cmd/argus-stream-engine-service/pipeline.o cmd/argus-stream-engine-service/libpipeline.a
+
+run: 
+	go run cmd/argus-stream-engine-service/main.go

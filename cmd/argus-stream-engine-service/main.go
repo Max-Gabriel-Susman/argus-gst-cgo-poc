@@ -3,7 +3,7 @@ package main
 /*
 #cgo CFLAGS: -I.
 #cgo LDFLAGS: -L. -lpipeline
-#include "pipeline.h"
+#include "../../pipeline.h"
 */
 import "C"
 

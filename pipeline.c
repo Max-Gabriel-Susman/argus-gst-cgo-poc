@@ -3,5 +3,9 @@
 
 void InitializeMediaPipeline() 
 {
-    printf("Hello from C!\n");
+    printf("Initializing Argus Stream Engine...\n");
+
+    // Initialize Media Pipeline for Argus Stream Engine.
+
+    printf("Argus Stream Engine Online.\n");
 }

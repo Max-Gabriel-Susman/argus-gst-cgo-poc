@@ -31,6 +31,10 @@ jobs:
     - name: Run the application
       run: |
         make run
+        
+    - name: Test the application
+      run: |
+        make test
 
     # - name: Build Docker image
     #   run: |

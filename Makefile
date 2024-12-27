@@ -9,3 +9,6 @@ clean:
 
 run: 
 	go run cmd/argus-stream-engine-service/main.go
+
+test: 
+	go test ./...

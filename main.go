@@ -2,6 +2,8 @@ package main
 
 /*
 #cgo pkg-config: gstreamer-1.0
+#cgo CFLAGS: -I.
+#cgo LDFLAGS: -L. -lgst_pipeline
 #include "gst_pipeline.h"
 */
 import "C"

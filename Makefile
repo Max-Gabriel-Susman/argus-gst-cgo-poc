@@ -9,8 +9,11 @@ build:
 	ar rcs libgst_pipeline.a gst_pipeline.o
 
 
+# clean: 
+# 	rm cmd/argus-stream-engine-service/pipeline.o cmd/argus-stream-engine-service/libpipeline.a
+
 clean: 
-	rm cmd/argus-stream-engine-service/pipeline.o cmd/argus-stream-engine-service/libpipeline.a
+	rm gst_pipeline.o libgst_pipeline.a
 
 run: 
 	go run cmd/argus-stream-engine-service/main.go

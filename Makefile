@@ -27,3 +27,8 @@ run:
 
 test: 
 	go test ./...
+
+stream:
+	ffmpeg -re -i /path/to/input.mp4 \
+    -c:v libx264 -preset veryfast -c:a aac -ar 44100 \
+    -f flv rtmp://localhost/incoming/myStream

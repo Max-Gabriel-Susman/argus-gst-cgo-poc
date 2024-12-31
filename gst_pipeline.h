@@ -6,20 +6,20 @@ extern "C" {
 #endif
 
 /**
- * Initializes the GStreamer library.
+ * Initializes the GStreamer library (gst_init).
  */
 void init_gstreamer(void);
 
 /**
- * Parses and starts a GStreamer pipeline from the provided string.
- * This function blocks until the pipeline is stopped (or hits an error/EOS).
+ * Starts a GStreamer pipeline from the given launch string and
+ * blocks until the pipeline is stopped or an error/EOS occurs.
  *
- * \param pipelineStr - A GStreamer launch string (e.g., "videotestsrc ! autovideosink").
+ * @param pipelineStr A GStreamer launch pipeline (e.g., receiving RTMP, streaming out RTMP).
  */
-void start_pipeline(const char *pipelineStr);
+void start_rtmp_forwarding(const char *pipelineStr);
 
 /**
- * Stops the currently running GStreamer pipeline and quits the main loop.
+ * Stops the currently running GStreamer pipeline by quitting its main loop.
  */
 void stop_pipeline(void);
 

@@ -5,7 +5,7 @@ deps:
 		gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \
 		gstreamer1.0-plugins-ugly
 	sudo apt-get install -y ffmpeg
-
+	sudo apt-get install -y libnginx-mod-rtmp
 
 # build:
 # 	gcc -c -o cmd/argus-stream-engine-service/pipeline.o pipeline.c

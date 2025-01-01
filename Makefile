@@ -31,7 +31,14 @@ run:
 test: 
 	go test ./...
 
-stream: 
+stream-once: 
 	ffmpeg -re -i imagery/input.mp4 \
     -c:v libx264 -c:a aac -ar 44100 \
     -f flv rtmp://localhost/incoming/myStream
+
+#stream on a loop
+stream:
+	ffmpeg -re -stream_loop -1 -i imagery/input.mp4 \
+    -c:v libx264 -c:a aac -ar 44100 \
+    -f flv rtmp://localhost/incoming/myStream
+

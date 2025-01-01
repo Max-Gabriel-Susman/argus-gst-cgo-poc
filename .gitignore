@@ -3,3 +3,4 @@ pipeline.o
 libpipeline.a
 gst_pipeline.o
 libgst_pipeline.a
+imagery/*.mp4

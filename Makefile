@@ -7,6 +7,9 @@ deps:
 	sudo apt-get install -y ffmpeg
 	sudo apt-get install -y libnginx-mod-rtmp
 
+prep: 
+	sudo systemctl restart nginx
+
 # build:
 # 	gcc -c -o cmd/argus-stream-engine-service/pipeline.o pipeline.c
 # 	ar rcs cmd/argus-stream-engine-service/libpipeline.a cmd/argus-stream-engine-service/pipeline.o
@@ -28,7 +31,7 @@ run:
 test: 
 	go test ./...
 
-stream:
-	ffmpeg -re -i /path/to/input.mp4 \
-    -c:v libx264 -preset veryfast -c:a aac -ar 44100 \
+stream: 
+	ffmpeg -re -i imagery/input.mp4 \
+    -c:v libx264 -c:a aac -ar 44100 \
     -f flv rtmp://localhost/incoming/myStream

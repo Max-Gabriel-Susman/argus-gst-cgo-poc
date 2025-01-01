@@ -26,7 +26,7 @@ clean:
 	rm gst_pipeline.o libgst_pipeline.a
 
 run: 
-	go run cmd/argus-stream-engine-service/main.go
+	go run main.go
 
 test: 
 	go test ./...

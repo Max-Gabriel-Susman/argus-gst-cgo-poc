@@ -26,7 +26,7 @@ clean:
 	rm gst_pipeline.o libgst_pipeline.a
 
 run: 
-	go run main.go
+	GST_DEBUG=3 go run main.go
 
 test: 
 	go test ./...

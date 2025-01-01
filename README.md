@@ -21,7 +21,7 @@ make build
 
 run application: 
 ```
-go run main.go
+make run
 ```
 
 remove stale binaries:

@@ -24,7 +24,7 @@ run application:
 go run main.go
 ```
 
-clear binaries:
+remove stale binaries:
 ```
 make clean
 ```
